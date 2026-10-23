@@ -1,0 +1,21 @@
+# Terraform の作業ファイル・状態ファイル（アカウントIDなどが含まれるので絶対に上げない）
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfplan
+
+# 個人・会社固有の値を書くファイル
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# 認証情報
+.env
+*.pem
+credentials
+
+# OS
+.DS_Store
+Thumbs.db
