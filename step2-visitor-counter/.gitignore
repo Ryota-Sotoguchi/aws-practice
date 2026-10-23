@@ -1,0 +1,2 @@
+# Terraform が生成する Lambda の zip（コードから毎回作られるので上げない）
+build/

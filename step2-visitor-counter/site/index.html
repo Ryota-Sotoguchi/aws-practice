@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AWS Hands-on | Step 2</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- config.js は Terraform が生成して S3 に置く（APIのURLが入る） -->
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">AWS Hands-on / Step 2</p>
+    <h1>Visitor Counter</h1>
+    <p class="lead">
+      ページを開くたびに Lambda が呼ばれ、DynamoDB のカウントが増えます。
+      同じタブで再読み込みしても、数えるのは1回だけです。
+    </p>
+
+    <div class="counter" aria-live="polite">
+      <span class="counter-label">あなたは</span>
+      <span id="visitor-count" class="counter-value">…</span>
+      <span class="counter-label">人目の訪問者です</span>
+    </div>
+
+    <section>
+      <h2>構成</h2>
+      <ol class="flow">
+        <li><strong>CloudFront + S3</strong><span>HTML・CSS・JS を配信（Step 1 と同じ）</span></li>
+        <li><strong>Lambda 関数URL</strong><span>ブラウザから HTTPS で直接呼び出す API</span></li>
+        <li><strong>Lambda</strong><span>Python でカウントを +1</span></li>
+        <li><strong>DynamoDB</strong><span>カウントを保存（ADD で同時アクセスにも強い）</span></li>
+      </ol>
+    </section>
+
+    <footer>Built with Terraform on AWS</footer>
+  </main>
+</body>
+</html>
