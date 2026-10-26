@@ -1,0 +1,6 @@
+# このファイルを terraform.tfvars という名前でコピーして値を書き換える
+# （terraform.tfvars は .gitignore 済みなので GitHub には上がらない）
+
+owner   = "your-name"
+project = "handson-visitor-counter"
+region  = "ap-northeast-1"
